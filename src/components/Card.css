@@ -1,0 +1,27 @@
+.card_object {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 30px;
+    color: black;
+    width: 90%;
+    max-width: 200px;
+
+
+    &>.top_card {
+
+        width: 90%;
+
+        &>img {
+            width: 100%;
+        }
+    }
+
+    &>.body_card {
+        display: flex;
+        flex-direction: column;
+
+        &>h6 {
+            margin: 10px 0;
+        }
+    }
+}
