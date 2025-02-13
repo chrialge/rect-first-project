@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import './CardForm.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { add } from '../redux/citiesSlice';
 
-function CardForm({ addCity }) {
+
+function CardForm() {
+    const value = useSelector((state) => state.cities.value);
+    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         title: "",
         image: "",
@@ -20,13 +25,19 @@ function CardForm({ addCity }) {
     const hadleSubmit = (e) => {
         e.preventDefault()
         const city = {
-            id: 6,
+            id: value.length,
             title: formData.title,
             image: formData.image,
             isVisited: formData.isVisited
         };
 
-        addCity(city);
+        setFormData({
+            title: "",
+            image: "",
+            isVisited: false
+        })
+
+        dispatch(add(city));
     }
 
     return (

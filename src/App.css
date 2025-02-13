@@ -50,3 +50,19 @@
   justify-content: space-evenly;
   gap: 5px;
 }
+
+.container_items {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+
+  &>* {
+    max-width: 200px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+  }
+}
